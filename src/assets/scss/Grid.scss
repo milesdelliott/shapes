@@ -1,0 +1,43 @@
+.container {
+    width: 90vw;
+    padding-bottom: 60%;
+    position: absolute;
+}
+
+.grid {
+    display: grid;
+    border: solid 2px black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    background: black;
+}
+
+.area {
+    background: #f2f2f2;
+    display: flex;
+    border: solid 5px black;
+    justify-content: center;
+    align-items: center;
+    @for $i from 0 to 9 {
+        &[data-width='#{$i}'] {
+            grid-column-end: span #{$i};
+        }
+        &[data-height='#{$i}'] {
+            grid-row-end: span #{$i};
+        }
+        &[data-row='#{$i}'] {
+            grid-row-start: #{$i + 1};
+        }
+        &[data-col='#{$i}'] {
+            grid-column-start: #{$i + 1};
+        }
+        &[data-order='#{$i}'] {
+            order: #{$i}
+        }
+    }
+}

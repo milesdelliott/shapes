@@ -1,0 +1,17 @@
+.pie {
+    height: 10rem;
+    width: 10rem;
+}
+
+.donut-text {
+    font-size: 0.3rem;
+}
+
+.bar {
+    width: 10rem;
+    .border {
+        fill: transparent;
+        stroke: black;
+        stroke-width: 3;
+    }
+}
